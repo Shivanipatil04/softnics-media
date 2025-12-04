@@ -1,52 +1,81 @@
-import React from 'react';
-import { Grid, Typography, Box } from '@mui/material';
-import SectionWrapper from '../common/SectionWrapper';
+import React from "react";
+import { Box, Typography } from "@mui/material";
+
+// If your placeholder is in public folder:
+const aboutImage = "/placeholder.png";
 
 const AboutSection = () => {
   return (
-    <SectionWrapper
-      id="about"
-      title="About Us"
-      subtitle="Redefining Digital Marketing Since 2020"
-    >
-      <Grid container spacing={4} alignItems="center">
-        <Grid item xs={12} md={6}>
-          <Typography variant="body1" color="text.secondary">
-            At Softnics Media, we blend strategic insight with innovative technology to craft
-            data-driven strategies, compelling creative communication, and seamless end-to-end
-            execution that truly moves the needle for your business.
-          </Typography>
-          <Box sx={{ mt: 2 }}>
-            <Typography variant="body1" color="text.secondary">
-              Since 2020, our passionate team has been helping brands scale their services,
-              expand into new markets, and attract clients who value meaningful connections.
-              Together, we create the perfect recipe for digital success.
-            </Typography>
-          </Box>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          {/* You can replace with an illustration / stats / image */}
+    <Box id="about" sx={{ backgroundColor: "#F5F7FF", py: 10 }}>
+
+      {/* ================= ABOUT US - FLEX 50/50 LAYOUT ================= */}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "center",
+          px: { xs: 2, md: 6 },
+          gap: 6,
+        }}
+      >
+        {/* LEFT IMAGE AREA */}
+        <Box
+          sx={{
+            flex: 1,
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
           <Box
+            component="img"
+            src={aboutImage}
+            alt="About Softnics Media"
             sx={{
-              bgcolor: 'primary.main',
+              width: "100%",
+              maxWidth: 450,
               borderRadius: 3,
-              p: 4,
-              color: 'white',
-              boxShadow: 4,
+              objectFit: "cover",
+              boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
             }}
+          />
+        </Box>
+
+        {/* RIGHT TEXT AREA */}
+        <Box sx={{ flex: 1 }}>
+          <Typography
+            variant="h3"
+            sx={{ fontWeight: 800, color: "#0D2A7F", mb: 2 }}
           >
-            <Typography variant="h6" sx={{ mb: 1 }}>
-              Why Brands Choose Us
-            </Typography>
-            <Typography variant="body2">
-              • Data-driven digital strategies <br />
-              • End-to-end creative & execution <br />
-              • Measurable, growth-focused outcomes
-            </Typography>
-          </Box>
-        </Grid>
-      </Grid>
-    </SectionWrapper>
+            About Us
+          </Typography>
+
+          <Typography
+            variant="h6"
+            sx={{ fontWeight: 600, color: "#0D2A7F", mb: 2 }}
+          >
+            The Journey of Softnics Media
+          </Typography>
+
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ lineHeight: 1.8 }}
+          >
+            Softnics Media is a leading digital marketing and branding agency,
+            helping businesses grow with creative strategies, performance marketing,
+            and innovative technology. Since 2020, we have partnered with brands
+            across industries to boost visibility, increase conversions, and build
+            strong digital identities.
+            <br /><br />
+            From website development and SEO to social media management and paid
+            campaigns, we ensure measurable results with creative excellence and a
+            data-driven approach. Our goal is simple — transform your brand into a
+            digital powerhouse.
+          </Typography>
+        </Box>
+      </Box>
+
+    </Box>
   );
 };
 

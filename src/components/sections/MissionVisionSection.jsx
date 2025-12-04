@@ -5,7 +5,7 @@ const MissionVisionSection = () => {
   return (
     <SectionWrapper
       id="mission-vision"
-      title="Mission & Vision"
+      title="Our Mission & Vision"
       subtitle="Driving growth, inspiring innovation."
       bg="background.paper"
     >

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   AppBar,
   Toolbar,
@@ -7,9 +7,10 @@ import {
   Button,
   useScrollTrigger,
   Slide,
-} from '@mui/material';
-import { Link as ScrollLink } from 'react-scroll';
-import logo from '../../assets/logo.png';
+} from "@mui/material";
+import { Link as ScrollLink } from "react-scroll";
+import { motion } from "framer-motion";
+import logo from "../../assets/logo.png";
 
 function HideOnScroll({ children }) {
   const trigger = useScrollTrigger();
@@ -21,33 +22,54 @@ function HideOnScroll({ children }) {
 }
 
 const sections = [
-  { id: 'hero', label: 'Home' },
-  { id: 'about', label: 'About Us' },
-  { id: 'services', label: 'Services' },
-  { id: 'clients', label: 'Result' },
-  { id: 'team', label: 'Team' },
-  { id: 'contact', label: 'Contact Us' },
+  { id: "hero", label: "Home" },
+  { id: "about", label: "About Us" },
+  { id: "services", label: "Services" },
+  { id: "clients", label: "Result" },
+  { id: "team", label: "Team" },
+  { id: "contact", label: "Contact Us" },
 ];
 
 const NavBar = () => {
+  const trigger = useScrollTrigger({ threshold: 20 });
+
   return (
     <HideOnScroll>
       <AppBar
         position="sticky"
-        elevation={0}
-        sx={{ bgcolor: 'white', color: 'text.primary', borderBottom: '1px solid #E5E7EB' }}
+        elevation={trigger ? 4 : 0}
+        sx={{
+          bgcolor: trigger ? "white" : "rgba(255,255,255,0.8)",
+          backdropFilter: "blur(10px)",
+          transition: "all 0.3s ease",
+          color: "text.primary",
+        }}
       >
-        <Container>
-          <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', py: 1.5 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-              <Box
-                component="img"
-                src={logo}
-                alt="Softnics Media"
-                sx={{ height: 40, objectFit: 'contain' }}
-              />
-            </Box>
-            <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2 }}>
+        <Container maxWidth="lg">
+          <Toolbar
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              py: 1.5,
+            }}
+          >
+            {/* LOGO */}
+            <Box
+              component={motion.img}
+              src={logo}
+              alt="Softnics Media"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              sx={{
+                height: 55, // Bigger logo
+                cursor: "pointer",
+                objectFit: "contain",
+              }}
+            />
+
+            {/* MENU ITEMS */}
+            <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
               {sections.map((section) => (
                 <ScrollLink
                   key={section.id}
@@ -55,11 +77,19 @@ const NavBar = () => {
                   smooth
                   offset={-90}
                   duration={500}
-                  style={{ textDecoration: 'none' }}
+                  style={{ textDecoration: "none" }}
                 >
                   <Button
-                    color="inherit"
-                    sx={{ fontWeight: 500, '&:hover': { color: 'primary.main' } }}
+                    sx={{
+                      fontWeight: 600,
+                      fontSize: "1rem",
+                      color: "text.primary",
+                      transition: "0.3s",
+                      "&:hover": {
+                        color: "primary.main",
+                        transform: "translateY(-2px)",
+                      },
+                    }}
                   >
                     {section.label}
                   </Button>

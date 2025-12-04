@@ -1,42 +1,50 @@
 export const services = [
   {
-    title: 'Graphic Design',
+    title: "Graphic Design",
+    icon: "design",
     description:
-      'Logo & branding, social media creatives, brochures, flyers, posters and more.',
+      "Logos, branding, brochures, posters, packaging, and social media creatives.",
   },
   {
-    title: 'Digital Marketing',
+    title: "Digital Marketing",
+    icon: "marketing",
     description:
-      'Social media management, lead generation campaigns, SEO and paid ads.',
+      "Social media management, SEO, lead generation, paid ads and influencer marketing.",
   },
   {
-    title: 'Photo & Video Shoot',
+    title: "Photo & Video Shoot",
+    icon: "camera",
     description:
-      'Product shoots, corporate shoots, events, reels and promo content.',
+      "Product shoots, corporate shoots, events, reels, and promo visual content.",
   },
   {
-    title: 'Video Editing',
+    title: "Video Editing",
+    icon: "video",
     description:
-      'Reels, YouTube videos, promos, corporate films and cinematic edits.',
+      "Reels, YouTube videos, corporate films, cinematic editing & motion graphics.",
   },
   {
-    title: 'Podcast Studio',
+    title: "Podcast Studio",
+    icon: "podcast",
     description:
-      'Professional audio and video podcast recording, setup and post-production.',
+      "Audio recording, video podcast setup, editing and complete post-production.",
   },
   {
-    title: 'Voice Artist',
+    title: "Voice Artist",
+    icon: "voice",
     description:
-      'Voiceovers, narration, dubbing and studio-quality voice recording.',
+      "Professional voiceovers, narration, dubbing and studio-quality audio recording.",
   },
   {
-    title: 'Website Development',
+    title: "Website Development",
+    icon: "website",
     description:
-      'Modern, responsive, SEO-friendly websites that represent your brand.',
+      "Corporate websites, e-commerce stores, portfolios and business websites.",
   },
   {
-    title: 'Application Development',
+    title: "Application Development",
+    icon: "app",
     description:
-      'Android, iOS and hybrid apps for e-commerce, services and more.',
+      "Android, iOS and hybrid apps for e-commerce, service & booking businesses.",
   },
 ];

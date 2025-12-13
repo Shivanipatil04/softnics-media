@@ -9,13 +9,14 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const SocialBar = () => {
   return (
-    <Box sx={{ bgcolor: 'white', color: '#0046C7', mb:"-50px" }}>
+    <Box sx={{ bgcolor: 'white', color: '#0046C7', mb:"-50px", }}>
       <Container
         sx={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           fontSize: 14,
+          minWidth: '80%',
         }}
       >
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>

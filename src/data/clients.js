@@ -1,4 +1,4 @@
-import aaryaFootz from '../assets/client/aaryaFootz.png'; // Replace with actual logo path in /assets/client/client logo
+import aaryaFootz from '../assets/client/aarya-foods.png'; // Replace with actual logo path in /assets/client/client logo
 import shadowAcademy from '../assets/client/shadowAcademy.png';
 import excellenceAcademy from '../assets/client/excellenceAcademy.jpeg';
 import holidayscare from '../assets/client/holidayscare.png';

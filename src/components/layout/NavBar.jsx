@@ -69,7 +69,7 @@ const NavBar = () => {
           borderBottom: trigger ? "1px solid #e5e7eb" : "none",
         }}
       >
-        <Container maxWidth="lg">
+        <Container sx={{minWidth:'100%'}}>
           <Toolbar
             sx={{
               display: "flex",
@@ -86,7 +86,7 @@ const NavBar = () => {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.4 }}
               sx={{
-                height: 70,
+                height: 80,
                 cursor: "pointer",
                 objectFit: "contain",
               }}
@@ -159,7 +159,7 @@ const NavBar = () => {
                 onClose={() => setAnchorEl(null)}
                 PaperProps={{
                   elevation: 4,
-                  sx: { mt: 1, borderRadius: 2 },
+                  sx: { mt: 1, borderRadius: 1 },
                 }}
               >
                 {serviceList.map((service, index) => (

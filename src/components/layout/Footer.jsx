@@ -11,6 +11,8 @@ const Footer = () => {
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: 1,
+          
+          minWidth: '80%',
         }}
       >
         <Typography variant="body2">

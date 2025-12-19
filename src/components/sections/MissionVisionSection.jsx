@@ -27,7 +27,7 @@ const MissionVisionSection = () => {
       id="mission-vision"
       title="Our Mission & Vision"
       subtitle="Guiding every strategy, shaping every success."
-      bg="white"
+      bg="#F5F9FF"
     >
       {/* ---------------- Mission & Vision Section (Kept Same) ---------------- */}
       <Box

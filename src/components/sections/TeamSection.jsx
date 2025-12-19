@@ -1,12 +1,12 @@
-import { Grid, Card, CardContent, Typography, Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import SectionWrapper from "../common/SectionWrapper";
 import { team } from "../../data/team";
 
 const TeamSection = () => {
   const getInitials = (name) => {
     const parts = name.trim().split(" ");
-    if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
-    return (parts[0].charAt(0) + parts[1].charAt(0)).toUpperCase();
+    if (parts.length === 1) return parts[0][0].toUpperCase();
+    return (parts[0][0] + parts[1][0]).toUpperCase();
   };
 
   const owner = team[0];
@@ -17,155 +17,135 @@ const TeamSection = () => {
       id="team"
       title="Our Team"
       subtitle="Meet the creative minds shaping digital excellence."
-      bg="white"
+      bg="#F5F9FF"
     >
-      <Box sx={{ maxWidth: "1200px", mx: "auto", px: { xs: 2, md: 3 } }}>
+      <Box sx={{ maxWidth: 1200, mx: "auto", px: 2 }}>
 
-        {/* ---------------- OWNER / FOUNDER ---------------- */}
-        <Grid
-          container
-          justifyContent="center"
-          sx={{ mb: { xs: 6, md: 10 } }}
+        {/* ================= OWNER ================= */}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            mb: { xs: 6, md: 10 },
+          }}
         >
-          <Grid
-            item
-            xs={12}
-            md={8}
-            lg={6}
-            sx={{ display: "flex", justifyContent: "center" }}
+          <Box
+            sx={{
+              width: "100%",
+              maxWidth: 420,
+              height: { xs: 360, md: 420 },   // 🔒 HARD SIZE
+              borderRadius: 2,
+              backgroundColor: "#f8fafc",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+              p: 4,
+            }}
           >
-            <Card
+            <Box
               sx={{
-                width: "100%",
-                maxWidth: 350,
-                height: 350,
-                borderRadius: "28px",
-                p: 4,
-                textAlign: "center",
-                background: "rgba(255, 255, 255, 0.55)",
-                backdropFilter: "blur(12px)",
-
-                // ⭐ Always show premium deep shadow (previous hover shadow)
-                boxShadow: "0 5px 10px rgba(30, 100, 230, 0.28)",
-
-                // No hover styles
-                transition: "none",
+                width: 120,
+                height: 120,
+                borderRadius: "50%",
+                mb: 2,
+                background: "linear-gradient(135deg,#1e3a8a,#3b82f6)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "2rem",
+                fontWeight: 800,
+                color: "#fff",
               }}
             >
-              {/* Gradient Avatar */}
+              {getInitials(owner.name)}
+            </Box>
+
+            <Typography variant="h6" fontWeight={800}>
+              {owner.name}
+            </Typography>
+
+            <Typography
+              variant="body2"
+              sx={{
+                mt: 1,
+                maxWidth: 260,
+                color: "text.secondary",
+              }}
+            >
+              {owner.role}
+            </Typography>
+          </Box>
+        </Box>
+
+        {/* ================= TEAM GRID ================= */}
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "repeat(2, 1fr)",   // 📱 mobile
+              md: "repeat(4, 1fr)",   // 🖥 desktop
+            },
+            gap: 4,
+          }}
+        >
+          {others.map((member) => (
+            <Box
+              key={member.name}
+              sx={{
+                height: 320,          // 🔒 HARD SIZE (THIS SOLVES EVERYTHING)
+                borderRadius: 1,
+                backgroundColor: "#f8fafc",
+                boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                p: 3,
+              }}
+            >
               <Box
                 sx={{
-                  mx: "auto",
-                  mb: 2,
-                  width: 110,
-                  height: 110,
+                  width: 90,
+                  height: 90,
                   borderRadius: "50%",
-                  position: "relative",
+                  mb: 2,
+                  background: "linear-gradient(135deg,#2563eb,#3b82f6)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-
-                  "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    inset: -3,
-                    borderRadius: "50%",
-                    padding: "3px",
-                    background:
-                      "linear-gradient(135deg, #2563eb, #3b82f6, #9333ea)",
-                    WebkitMask:
-                      "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                    WebkitMaskComposite: "xor",
-                    maskComposite: "exclude",
-                    animation: "spin 6s linear infinite",
-                  },
-
-                  "@keyframes spin": {
-                    "0%": { transform: "rotate(0deg)" },
-                    "100%": { transform: "rotate(360deg)" },
-                  },
+                  color: "#fff",
+                  fontSize: "1.6rem",
+                  fontWeight: 700,
                 }}
               >
-                <Box
-                  sx={{
-                    width: "100%",
-                    height: "100%",
-                    borderRadius: "50%",
-                    background: "linear-gradient(135deg, #1e3a8a, #3b82f6)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "2rem",
-                    fontWeight: 800,
-                    color: "white",
-                  }}
-                >
-                  {getInitials(owner.name)}
-                </Box>
+                {getInitials(member.name)}
               </Box>
 
-              <Typography variant="h6" sx={{ fontWeight: 800 }}>
-                {owner.name}
+              <Typography variant="h6" fontWeight={700}>
+                {member.name}
               </Typography>
-              <Typography variant="body2" sx={{ mt: 1, color: "text.secondary" }}>
-                {owner.role}
-              </Typography>
-            </Card>
-          </Grid>
-        </Grid>
 
-        {/* ---------------- OTHER TEAM MEMBERS ---------------- */}
-        <Grid container spacing={4} justifyContent="center">
-          {others.map((member) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={member.name}>
-              <Card
+              <Typography
+                variant="body2"
                 sx={{
-                  borderRadius: 2,
-                  background: "linear-gradient(180deg, #ffffff, #f8faff)",
-                  textAlign: "center",
-                  p: 4,
-
-                  // ⭐ Always show premium shadow (previous hover shadow)
-                  boxShadow: "0 5px 10px rgba(0,0,0,0.18)",
-
-                  transition: "none",
+                  mt: 1,
+                  color: "text.secondary",
+                  maxWidth: 220,
+                  display: "-webkit-box",
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
                 }}
               >
-                <Box
-                  sx={{
-                    width: 95,
-                    height: 95,
-                    borderRadius: "50%",
-                    mx: "auto",
-                    mb: 2,
-                    background: "linear-gradient(135deg, #2563eb, #3b82f6)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "white",
-                    fontSize: "1.8rem",
-                    fontWeight: 700,
-                    boxShadow: "0 6px 20px rgba(37,99,235,0.25)",
-                  }}
-                >
-                  {getInitials(member.name)}
-                </Box>
-
-                <CardContent sx={{ p: 0 }}>
-                  <Typography variant="h6" sx={{ fontWeight: 700 }}>
-                    {member.name}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ mt: 1, color: "text.secondary" }}
-                  >
-                    {member.role}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
+                {member.role}
+              </Typography>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Box>
     </SectionWrapper>
   );

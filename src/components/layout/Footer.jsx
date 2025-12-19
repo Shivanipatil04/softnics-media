@@ -3,7 +3,7 @@ import { Box, Container, Typography, Stack } from '@mui/material';
 
 const Footer = () => {
   return (
-    <Box sx={{ bgcolor: 'white', color: '#0046C7', py: 2, mt: 6 }}>
+    <Box sx={{ bgcolor: '#F5F9FF', color: '#0046C7', py: 2, mt: 6 }}>
       <Container
         sx={{
           display: 'flex',

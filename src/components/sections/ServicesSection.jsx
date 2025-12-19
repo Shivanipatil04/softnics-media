@@ -68,10 +68,10 @@ const ServicesSection = () => {
             key={service.title}
             onClick={() => goToService(service)}
             sx={{
-              width: { xs: "100%", sm: "47%", md: "30%" },
+              width: { xs: "100%", sm: "48%", md: "30%" },
               border: "1px solid #E5E7EB",
               borderRadius: 2,
-              p: 3,
+              p: { xs: 2.5, md: 3 },
               backgroundColor: "white",
               transition: "0.3s ease",
               cursor: "pointer",

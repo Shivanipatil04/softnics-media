@@ -54,7 +54,7 @@ const ContactSection = () => {
       return;
     }
 
-    const phone = "919921223986";
+    const phone = "919767713420";
 
     const text =
       `Hi, I am ${form.name}.\n` +

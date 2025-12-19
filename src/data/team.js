@@ -19,4 +19,20 @@ export const team = [
     name: 'Atharva Satote',
     role: 'Editor',
   },
+  {
+    name: 'Nikita Patil',
+    role: 'Graphic Designer',
+  },
+  {
+    name: 'Shivam Ojha',
+    role: '( river and fire ) Media house partner',
+  },
+  {
+    name: 'Prathmesh Rokade',
+    role: '( river and fire ) Media house partner',
+  },
+  {
+    name: 'Shivani Patil',
+    role: 'Web Developer',
+  },
 ];

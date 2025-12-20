@@ -214,8 +214,7 @@ const MissionVisionSection = () => {
         strategic planning, and creative execution.”
       </Typography>
 
-      {/* ---------------- SMART CARDS 3×2 GRID (SMALL BOXES) ---------------- */}
-      {/* ---------------- SMART CARDS (PERFECT SMALL FLEXBOX LAYOUT) ---------------- */}
+      
 {/* SMART CARDS (3 × 2 layout) */}
 <Box
   sx={{

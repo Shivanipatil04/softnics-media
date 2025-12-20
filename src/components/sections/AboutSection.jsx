@@ -2,7 +2,7 @@
 import React from "react";
 import { Box, Typography, Button, Stack, Divider } from "@mui/material";
 import SectionWrapper from "../common/SectionWrapper";
-import aboutImage from "../../assets/about-us.png"; // <-- ensure this path is correct
+import aboutImage from "../../assets/about-us.png"; 
 
 const AboutSection = () => {
   return (
@@ -23,7 +23,7 @@ const AboutSection = () => {
           minWidth:'100%'
         }}
       >
-        {/* LEFT: Illustration / Image */}
+        
         <Box
           sx={{
             flex: 1,
@@ -47,7 +47,7 @@ const AboutSection = () => {
           />
         </Box>
 
-        {/* RIGHT: Content */}
+        
         <Box sx={{ flex: 1, minWidth: 0 }}>
           <Typography
             variant="h4"
@@ -67,7 +67,7 @@ const AboutSection = () => {
             audiences, and build strong digital identities across platforms.
           </Typography>
 
-          {/* Short summary bullets */}
+          
           <Box sx={{ mb: 2 }}>
             <Stack component="ul" spacing={1} sx={{ pl: 2, m: 0 }}>
               <li>

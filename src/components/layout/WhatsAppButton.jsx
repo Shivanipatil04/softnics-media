@@ -3,7 +3,7 @@ import { Fab } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const WhatsAppButton = () => {
-  const phone = '919767713420'; // WhatsApp number; remove spaces and leading +
+  const phone = '919767713420'; 
 
   const handleClick = () => {
     window.open(`https://wa.me/${phone}`, '_blank');

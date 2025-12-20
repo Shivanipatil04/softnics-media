@@ -1,42 +1,57 @@
-import React from 'react';
-import { Box, IconButton, Container } from '@mui/material';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import PhoneIcon from '@mui/icons-material/Phone';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import React from "react";
+import { Box, IconButton, Container } from "@mui/material";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import PhoneIcon from "@mui/icons-material/Phone";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const SocialBar = () => {
   return (
     <Box
       sx={{
-        bgcolor: '#F5F9FF',
-        color: '#0046C7',
-        mb: '-50px',
-        pt: '10px',
+        bgcolor: "#F5F9FF",
+        color: "#0046C7",
+        py: "10px",
+        
+        mb: { xs: "-5px", md: "-40px" },
       }}
     >
       <Container
+        maxWidth="lg"
         sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          fontSize: 14,
-          minWidth: '80%',
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "center",
+          justifyContent: "space-between",
+          textAlign: { xs: "center", md: "left" },
+          gap: { xs: 1, md: 0 },
         }}
       >
-        {/* LEFT INFO */}
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <MailOutlineIcon sx={{ fontSize: 18 }} />
-          <span>softnicsmedia@gmail.com</span>
-{/* 
-          <PhoneIcon sx={{ fontSize: 18, ml: 2 }} />
-          <span>+91 99212 23986 / 093093 56702</span> */}
+      
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: "center",
+            gap: { xs: 0.5, md: 2 },
+            fontSize: 14,
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+            <MailOutlineIcon sx={{ fontSize: 18 }} />
+            <span>softnicsmedia@gmail.com</span>
+          </Box>
+
+          {/* <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+            <PhoneIcon sx={{ fontSize: 18 }} />
+            <span>+91 99212 23986 / 093093 56702</span>
+          </Box> */}
         </Box>
 
-        {/* SOCIAL LINKS */}
-        <Box>
+        
+        <Box sx={{ mt: { xs: 1, md: 0 } }}>
           <IconButton
             size="small"
             component="a"

@@ -202,7 +202,6 @@ const MissionVisionSection = () => {
 
        <Typography
         sx={{
-          // color: "royalBlue",
           textAlign: "center",
           maxWidth: 700,
           mx: "auto",

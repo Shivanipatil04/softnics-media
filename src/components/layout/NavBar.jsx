@@ -10,17 +10,14 @@ import {
   IconButton,
   Menu,
   MenuItem,
-  Divider,
-  Typography,
 } from "@mui/material";
-import { Link as ScrollLink } from "react-scroll";
 import MenuIcon from "@mui/icons-material/Menu";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "../../assets/logo.png";
 
-// Hide navbar on scroll
+
 function HideOnScroll({ children }) {
   const trigger = useScrollTrigger();
   return (
@@ -30,11 +27,11 @@ function HideOnScroll({ children }) {
   );
 }
 
-// Main navigation items except Services
+
 const sections = [
   { id: "hero", label: "Home" },
   { id: "about", label: "About Us" },
-  { id: "clients", label: "Portfolio" },
+  { id: "portfolio-page", label: "Portfolio" },
   { id: "team", label: "Team" },
   { id: "contact", label: "Contact Us" },
 ];
@@ -48,7 +45,6 @@ const sections_mobile = [
   { id: "contact", label: "Contact Us" },
 ];
 
-// Services dropdown list
 const serviceList = [
   "Graphics Designing",
   "Digital Marketing",
@@ -60,7 +56,6 @@ const serviceList = [
   "Application Development",
 ];
 
-// Map service names → URL slugs
 const serviceSlugMap = {
   "Graphics Designing": "graphics-designing",
   "Digital Marketing": "digital-marketing",
@@ -73,11 +68,35 @@ const serviceSlugMap = {
 };
 
 const NavBar = () => {
-  const trigger = useScrollTrigger({ threshold: 10 });
   const navigate = useNavigate();
+  const trigger = useScrollTrigger({ threshold: 10 });
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileAnchor, setMobileAnchor] = useState(null);
+
+ 
+  const handleScrollNav = (sectionId) => {
+    if (sectionId === "portfolio-page") {
+      navigate("/portfolio");
+      return;
+    }
+
+    if (window.location.pathname !== "/") {
+      navigate("/");
+
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 300);
+    } else {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
 
   return (
     <HideOnScroll>
@@ -113,6 +132,7 @@ const NavBar = () => {
                 cursor: "pointer",
                 objectFit: "contain",
               }}
+              onClick={() => handleScrollNav("hero")}
             />
 
             {/* DESKTOP MENU */}
@@ -124,8 +144,8 @@ const NavBar = () => {
               }}
             >
               {sections.map((section, index) => (
-                <React.Fragment key={section.id}>
-                  {/* Insert SERVICES dropdown at position 3 */}
+                <React.Fragment key={index}>
+                  {/* Insert Services at position 3 */}
                   {index === 2 && (
                     <Button
                       onClick={(e) => setAnchorEl(e.currentTarget)}
@@ -146,35 +166,26 @@ const NavBar = () => {
                     </Button>
                   )}
 
-                  {/* Normal Nav buttons */}
-                  <ScrollLink
-                    to={section.id}
-                    smooth
-                    offset={-90}
-                    duration={500}
-                    style={{ textDecoration: "none" }}
+                  <Button
+                    onClick={() => handleScrollNav(section.id)}
+                    sx={{
+                      fontWeight: 600,
+                      fontSize: "1rem",
+                      textTransform: "none",
+                      color: "text.primary",
+                      px: 1,
+                      "&:hover": {
+                        color: "primary.main",
+                        transform: "translateY(-2px)",
+                      },
+                    }}
                   >
-                    <Button
-                      sx={{
-                        fontWeight: 600,
-                        fontSize: "1rem",
-                        textTransform: "none",
-                        color: "text.primary",
-                        px: 1,
-                        transition: "0.3s ease",
-                        "&:hover": {
-                          color: "primary.main",
-                          transform: "translateY(-2px)",
-                        },
-                      }}
-                    >
-                      {section.label}
-                    </Button>
-                  </ScrollLink>
+                    {section.label}
+                  </Button>
                 </React.Fragment>
               ))}
 
-              {/* SERVICES DROPDOWN MENU */}
+              {/* SERVICES DROPDOWN */}
               <Menu
                 anchorEl={anchorEl}
                 open={Boolean(anchorEl)}
@@ -207,7 +218,7 @@ const NavBar = () => {
               </Menu>
             </Box>
 
-            {/* MOBILE MENU BUTTON */}
+           
             <IconButton
               sx={{ display: { xs: "flex", md: "none" } }}
               onClick={(e) => setMobileAnchor(e.currentTarget)}
@@ -215,7 +226,7 @@ const NavBar = () => {
               <MenuIcon fontSize="large" />
             </IconButton>
 
-            {/* MOBILE MENU */}
+            
             <Menu
               anchorEl={mobileAnchor}
               open={Boolean(mobileAnchor)}
@@ -226,16 +237,15 @@ const NavBar = () => {
               }}
             >
               {sections_mobile.map((section) => (
-                <MenuItem key={section.id} onClick={() => setMobileAnchor(null)}>
-                  <ScrollLink
-                    to={section.id}
-                    smooth
-                    offset={-80}
-                    duration={500}
-                    style={{ width: "100%", fontWeight: 600 }}
-                  >
-                    {section.label}
-                  </ScrollLink>
+                <MenuItem
+                  key={section.id}
+                  onClick={() => {
+                    setMobileAnchor(null);
+                    handleScrollNav(section.id);
+                  }}
+                  sx={{ fontWeight: 600 }}
+                >
+                  {section.label}
                 </MenuItem>
               ))}
             </Menu>

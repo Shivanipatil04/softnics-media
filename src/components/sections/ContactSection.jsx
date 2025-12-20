@@ -80,7 +80,7 @@ const ContactSection = () => {
           mt: 6,
         }}
       >
-        {/* LEFT PANEL */}
+        
         <Box sx={{ flex: 1 }}>
           <Typography variant="h5" sx={{ mb: 2, fontWeight: 700 }}>
             Get in Touch
@@ -138,7 +138,7 @@ const ContactSection = () => {
           </Stack>
         </Box>
 
-        {/* RIGHT FORM PANEL */}
+        
         <Paper
           elevation={5}
           sx={{
@@ -198,13 +198,13 @@ const ContactSection = () => {
                 onChange={handleChange}
               />
 
-              {/* CAPTCHA */}
+             
               <ReCAPTCHA
                 sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
                 onChange={handleCaptcha}
               />
 
-              {/* BUTTONS */}
+              
               <Stack
                 direction={{ xs: "column", sm: "row" }}
                 spacing={2}

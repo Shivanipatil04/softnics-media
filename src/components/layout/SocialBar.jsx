@@ -15,18 +15,19 @@ const SocialBar = () => {
         color: "#0046C7",
         py: "10px",
         
-        mb: '-60px',
+        // mb: '-60px',
       }}
     >
       <Container
-        maxWidth="lg"
+        // maxWidth="lg"
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
           justifyContent: "space-between",
-          textAlign: { xs: "center", md: "left" },
+          // textAlign: { xs: "center", md: "left" },
           gap: { xs: 1, md: 0 },
+          minWidth: "80%",
         }}
       >
       

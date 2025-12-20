@@ -1,18 +1,18 @@
-import React from 'react';
-import { Box, Container, Typography, Stack } from '@mui/material';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Box, Container, Typography, Stack } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <Box sx={{ bgcolor: '#F5F9FF', color: '#0046C7', py: 2, mt: 6 }}>
+    <Box sx={{ bgcolor: "#F5F9FF", color: "#0046C7", py: 2 }}>
       <Container
         sx={{
-          display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' },
-          alignItems: 'center',
-          justifyContent: 'space-between',
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "center",
+          justifyContent: "space-between",
           gap: 1,
-          minWidth: '80%',
+          minWidth: "80%",
         }}
       >
         <Typography variant="body2">

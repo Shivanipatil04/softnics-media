@@ -1,96 +1,187 @@
-// src/pages/TermsConditions.jsx
-import { Box, Typography } from "@mui/material";
+import React, { useEffect } from "react";
+import { Box, Typography, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const TermsConditions = () => {
+  // ⭐ Ensure page opens from TOP
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
-    <Box sx={{ maxWidth: "900px", mx: "auto", py: 6, px: 3 }}>
-      <Typography variant="h4" sx={{ fontWeight: 700, mb: 3 }}>
+    <Box
+      sx={{
+        maxWidth: "900px",
+        mx: "auto",
+        py: { xs: 4, md: 8 },
+        px: { xs: 2, md: 4 },
+      }}
+    >
+      {/* MAIN HEADING */}
+      <Typography
+        variant="h4"
+        sx={{
+          fontWeight: 800,
+          mb: 3,
+          textAlign: "center",
+          color: "#0B1A39",
+        }}
+      >
         Terms & Conditions – Softnics Media
       </Typography>
 
-      {/* Intellectual Property */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        Intellectual Property
+      <Typography
+        sx={{
+          mb: 4,
+          textAlign: "center",
+          color: "#444",
+          fontSize: "1.05rem",
+        }}
+      >
+        Please read these terms carefully. By working with Softnics Media, you
+        agree to the following service policies.
       </Typography>
 
-      <Typography sx={{ mb: 1 }}>
-        All information, material, and content provided by Softnics Media are
-        protected by copyright and intellectual property laws. You may not modify,
-        publish, distribute, re-post, perform, display, or commercially exploit any
-        content without written permission.
-      </Typography>
+      <Box sx={{ lineHeight: 1.8 }}>
 
-      <Typography sx={{ mb: 1 }}>
-        Softnics Media does not sell, rent, or share your information with any
-        third party except when necessary to fulfill a service or requirement.
-      </Typography>
+        {/* Intellectual Property */}
+        <Typography
+          variant="h6"
+          sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}
+        >
+          Intellectual Property
+        </Typography>
 
-      {/* Content Responsibility */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        Content Responsibility
-      </Typography>
+        <Typography sx={{ mt: 1 }}>
+          All materials, designs, content, and media created or provided by
+          Softnics Media are protected under copyright and intellectual
+          property laws.
+        </Typography>
 
-      <Typography sx={{ mb: 1 }}>
-        All content, images, and materials required for the project must be provided 
-        by the client. Softnics Media is not responsible for any copyright, trademark,
-        or intellectual property issues arising from client-provided assets.
-      </Typography>
+        <Typography sx={{ mb: 1 }}>
+          You may not modify, publish, distribute, or commercially reuse any
+          content without written permission.  
+          Softnics Media does not sell or share your content with third parties
+          unless required to provide services.
+        </Typography>
 
-      {/* Portfolio Usage */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        Portfolio & Promotion
-      </Typography>
+        {/* Content Responsibility */}
+        <Typography
+          variant="h6"
+          sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}
+        >
+          Content Responsibility
+        </Typography>
 
-      <Typography sx={{ mb: 1 }}>
-        Work developed by Softnics Media may include a credit or link to our website.
-        Client brand names may be used in case studies, marketing material, and
-        promotional content unless otherwise agreed in writing.
-      </Typography>
+        <Typography sx={{ mb: 1 }}>
+          Clients must provide accurate, original, non-copyrighted images,
+          text, and branding materials.  
+          Softnics Media is not responsible for legal disputes caused by
+          client-submitted assets.
+        </Typography>
 
-      {/* Payment Terms */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        Payment Terms
-      </Typography>
+        {/* Portfolio Usage */}
+        <Typography
+          variant="h6"
+          sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}
+        >
+          Portfolio & Promotion
+        </Typography>
 
-      <Typography component="ul" sx={{ pl: 3, mb: 1 }}>
-        <li>Website Development: 50% advance + 50% after final approval or going live</li>
-        <li>All Other Services: 100% advance payment</li>
-        <li>Advertising Budget: Ad spend (Google/Meta Ads) must be paid directly to the platform</li>
-      </Typography>
+        <Typography sx={{ mb: 1 }}>
+          Softnics Media may showcase completed projects in its portfolio,
+          website, presentations, and marketing content unless explicitly
+          requested otherwise in writing by the client.
+        </Typography>
 
-      {/* Engagement Period */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        Engagement Period
-      </Typography>
+        {/* Payment Terms */}
+        <Typography
+          variant="h6"
+          sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}
+        >
+          Payment Terms
+        </Typography>
 
-      <Typography sx={{ mb: 1 }}>
-        Minimum engagement period for Digital Marketing & SEO services is <strong>6 months</strong>.
-      </Typography>
+        <Typography component="ul" sx={{ pl: 4 }}>
+          <li>Website Development: 50% advance + 50% after approval/going live</li>
+          <li>All Other Services: 100% advance</li>
+          <li>Ad Budget: Must be paid directly to Google/Meta platforms</li>
+        </Typography>
 
-      {/* Cancellation */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        Cancellation Policy
-      </Typography>
+        {/* Engagement Period */}
+        <Typography
+          variant="h6"
+          sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}
+        >
+          Engagement Period
+        </Typography>
 
-      <Typography sx={{ mb: 1 }}>
-        Clients must notify our support team via email for service cancellation:
-        <br />
-        📩 <strong>softnicsmedia@gmail.com</strong>
-      </Typography>
+        <Typography sx={{ mb: 1 }}>
+          Minimum commitment period for Digital Marketing & SEO services is{" "}
+          <strong>6 months</strong>.
+        </Typography>
 
-      {/* Refund */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        Refund Policy
-      </Typography>
+        {/* Cancellation */}
+        <Typography
+          variant="h6"
+          sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}
+        >
+          Cancellation Policy
+        </Typography>
 
-      <Typography sx={{ mb: 1 }}>
-        Softnics Media provides a detailed portfolio and consultations before onboarding.
-        Payments for services are non-refundable. Please clarify any doubts before payment.
-      </Typography>
+        <Typography sx={{ mb: 1 }}>
+          Clients must email our support team to request cancellation:
+          <br />
+          📩 <strong>softnicsmedia@gmail.com</strong>
+        </Typography>
 
-      <Typography sx={{ mt: 4, fontWeight: 600 }}>
-        Thank you for choosing Softnics Media!
-      </Typography>
+        {/* Refund Policy */}
+        <Typography
+          variant="h6"
+          sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}
+        >
+          Refund Policy
+        </Typography>
+
+        <Typography sx={{ mb: 3 }}>
+          All payments are non-refundable.  
+          We provide detailed consultation & portfolio examples before project
+          confirmation. Please clarify all doubts prior to payment.
+        </Typography>
+
+        <Typography
+          sx={{
+            mt: 3,
+            fontWeight: 600,
+            textAlign: "center",
+            color: "#0B1A39",
+          }}
+        >
+          Thank you for choosing Softnics Media!
+        </Typography>
+      </Box>
+
+      {/* BACK BUTTON */}
+      <Box sx={{ textAlign: "center", mt: 5 }}>
+        <Button
+          component={Link}
+          to="/"
+          sx={{
+            background: "linear-gradient(90deg,#0046C7,#007BFF)",
+            color: "white",
+            px: 4,
+            py: 1.2,
+            borderRadius: "10px",
+            fontSize: "1rem",
+            fontWeight: 600,
+            "&:hover": {
+              background: "linear-gradient(90deg,#003BB0,#006BE3)",
+            },
+          }}
+        >
+          Back to Home
+        </Button>
+      </Box>
     </Box>
   );
 };

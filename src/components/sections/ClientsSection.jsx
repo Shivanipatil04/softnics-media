@@ -80,7 +80,7 @@ const ClientsSection = () => {
         </Slider>
       </Box>
 
-      {/* CLIENT DETAILS MODAL */}
+      
       <Dialog
         open={!!selectedClient}
         onClose={() => setSelectedClient(null)}
@@ -123,7 +123,7 @@ const ClientsSection = () => {
                 ))}
               </ul>
 
-              {/* SOCIAL ICONS */}
+              
               <Stack direction="row" spacing={2} sx={{ mt: 3 }}>
                 {selectedClient.links.youtube && (
                   <IconButton

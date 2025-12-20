@@ -1,156 +1,197 @@
-
-import { Box, Typography } from "@mui/material";
+import React, { useEffect } from "react";
+import { Box, Typography, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Policy = () => {
+
+  // ⭐ FIX: Always open page from TOP
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
-    <Box sx={{ maxWidth: "900px", mx: "auto", py: 6, px: 3 }}>
-      <Typography variant="h4" sx={{ fontWeight: 700, mb: 3 }}>
+    <Box
+      sx={{
+        maxWidth: "900px",
+        mx: "auto",
+        py: { xs: 4, md: 8 },
+        px: { xs: 2, md: 4 },
+      }}
+    >
+      {/* Heading */}
+      <Typography
+        variant="h4"
+        sx={{
+          fontWeight: 800,
+          mb: 3,
+          textAlign: "center",
+          color: "#0B1A39",
+        }}
+      >
         Privacy Policy – Softnics Media
       </Typography>
 
-      <Typography sx={{ mb: 2 }}>
-        At Softnics Media, we are committed to protecting your privacy and
-        ensuring that your personal information is handled in a safe and
-        responsible manner. This Privacy Policy outlines how we collect, use,
-        store, and safeguard your information.
+      <Typography
+        sx={{
+          mb: 4,
+          textAlign: "center",
+          color: "#444",
+          fontSize: "1.05rem",
+        }}
+      >
+        Your privacy is important to us. This page explains what data we collect,
+        how we use it, and how we keep it secure.
       </Typography>
 
-      {/* 1. Information We Collect */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        1. Information We Collect
-      </Typography>
+      {/* ===================== CONTENT ===================== */}
+      <Box sx={{ lineHeight: 1.8 }}>
+        {/* 1 */}
+        <Typography variant="h6" sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}>
+          1. Information We Collect
+        </Typography>
 
-      <Typography sx={{ mt: 1, fontWeight: 600 }}>a. Personal Information</Typography>
-      <Typography sx={{ mb: 1 }}>
-        Name <br />
-        Email address <br />
-        Phone number <br />
-        Company name <br />
-        Billing and payment details
-      </Typography>
+        <Typography sx={{ mt: 2, fontWeight: 600 }}>a. Personal Information</Typography>
+        <Typography>
+          Name <br />
+          Email address <br />
+          Phone number <br />
+          Company name <br />
+          Billing and payment details
+        </Typography>
 
-      <Typography sx={{ mt: 1, fontWeight: 600 }}>b. Non-Personal Information</Typography>
-      <Typography sx={{ mb: 1 }}>
-        Browser type <br />
-        IP address <br />
-        Device type <br />
-        Website usage data <br />
-        Cookies and tracking information
-      </Typography>
+        <Typography sx={{ mt: 2, fontWeight: 600 }}>b. Non-Personal Information</Typography>
+        <Typography>
+          Browser type <br />
+          IP address <br />
+          Device type <br />
+          Usage analytics <br />
+          Cookies & tracking data
+        </Typography>
 
-      <Typography sx={{ mt: 1, fontWeight: 600 }}>c. Project-Related Information</Typography>
-      <Typography sx={{ mb: 1 }}>
-        Any content, images, text, or material you provide for your project.
-      </Typography>
+        <Typography sx={{ mt: 2, fontWeight: 600 }}>c. Project-Related Information</Typography>
+        <Typography>
+          Any content, images, or reference material you share for your project.
+        </Typography>
 
-      {/* 2. How We Use Your Information */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        2. How We Use Your Information
-      </Typography>
+        {/* 2 */}
+        <Typography variant="h6" sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}>
+          2. How We Use Your Information
+        </Typography>
 
-      <Typography sx={{ mb: 1 }}>
-        Softnics Media uses your information to:
-      </Typography>
+        <Typography sx={{ mb: 1 }}>
+          Softnics Media uses your information to:
+        </Typography>
 
-      <Typography component="ul" sx={{ pl: 3, mb: 1 }}>
-        <li>Provide and manage our digital marketing, design, and development services</li>
-        <li>Communicate regarding projects, support, and updates</li>
-        <li>Process payments and invoices</li>
-        <li>Improve service quality and user experience</li>
-        <li>Send offers or promotional communications (if consented)</li>
-      </Typography>
+        <Typography component="ul" sx={{ pl: 4 }}>
+          <li>Deliver and manage digital marketing & development services</li>
+          <li>Communicate regarding project updates</li>
+          <li>Process billing and invoices</li>
+          <li>Improve our website and services</li>
+          <li>Send offers (only if you agree)</li>
+        </Typography>
 
-      <Typography sx={{ mb: 1 }}>
-        We do <strong>not</strong> sell or rent your personal information to third parties.
-      </Typography>
+        <Typography sx={{ mt: 1 }}>
+          We <strong>never sell</strong> your information to third parties.
+        </Typography>
 
-      {/* 3. Sharing Information */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        3. Sharing of Information
-      </Typography>
+        {/* 3 */}
+        <Typography variant="h6" sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}>
+          3. Sharing of Information
+        </Typography>
 
-      <Typography sx={{ mb: 1 }}>
-        We may share your information only when necessary:
-      </Typography>
+        <Typography>We may share your information only:</Typography>
 
-      <Typography component="ul" sx={{ pl: 3, mb: 1 }}>
-        <li>With trusted service providers essential for completing your project</li>
-        <li>With payment processors for billing</li>
-        <li>To comply with legal obligations or protect our rights</li>
-      </Typography>
+        <Typography component="ul" sx={{ pl: 4 }}>
+          <li>With trusted service partners</li>
+          <li>With payment systems</li>
+          <li>To comply with legal obligations</li>
+        </Typography>
 
-      {/* 4. Data Security */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        4. Data Security
-      </Typography>
+        {/* 4 */}
+        <Typography variant="h6" sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}>
+          4. Data Security
+        </Typography>
+        <Typography>
+          Your data is stored securely using encryption and industry best
+          practices. However, no online system is 100% risk-free.
+        </Typography>
 
-      <Typography sx={{ mb: 1 }}>
-        Your data is protected through secure servers, encryption, and 
-        industry-standard security practices.  
-        However, no online system can guarantee 100% security.
-      </Typography>
+        {/* 5 */}
+        <Typography variant="h6" sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}>
+          5. Cookies & Tracking
+        </Typography>
+        <Typography>
+          Softnics Media uses cookies to analyze usage and improve performance.
+        </Typography>
 
-      {/* 5. Cookies */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        5. Cookies & Tracking
-      </Typography>
+        {/* 6 */}
+        <Typography variant="h6" sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}>
+          6. Third-Party Links
+        </Typography>
+        <Typography>
+          We are not responsible for external websites linked from our platform.
+        </Typography>
 
-      <Typography sx={{ mb: 1 }}>
-        Softnics Media uses cookies to enhance user experience, track analytics,
-        and improve site performance. You may disable cookies in your browser settings.
-      </Typography>
+        {/* 7 */}
+        <Typography variant="h6" sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}>
+          7. Data Retention
+        </Typography>
+        <Typography>
+          We retain your data only for legal compliance and project history.
+        </Typography>
 
-      {/* 6. Third-Party Links */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        6. Third-Party Links
-      </Typography>
+        {/* 8 */}
+        <Typography variant="h6" sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}>
+          8. Your Rights
+        </Typography>
 
-      <Typography sx={{ mb: 1 }}>
-        Our website may contain links to external sites. We are not responsible
-        for their privacy practices or content.
-      </Typography>
+        <Typography component="ul" sx={{ pl: 4 }}>
+          <li>Request a copy of your data</li>
+          <li>Update or correct details</li>
+          <li>Request deletion (where legally allowed)</li>
+          <li>Opt out of promotional messages</li>
+        </Typography>
 
-      {/* 7. Data Retention */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        7. Data Retention
-      </Typography>
+        {/* 9 */}
+        <Typography variant="h6" sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}>
+          9. Updates to This Policy
+        </Typography>
+        <Typography>
+          We may update this page occasionally. Any changes will appear here.
+        </Typography>
 
-      <Typography sx={{ mb: 1 }}>
-        We retain data only as long as required for projects, legal obligations,
-        and service history.
-      </Typography>
+        {/* 10 */}
+        <Typography variant="h6" sx={{ fontWeight: 700, mt: 4, color: "#0046C7" }}>
+          10. Contact Information
+        </Typography>
 
-      {/* 8. Your Rights */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        8. Your Rights
-      </Typography>
+        <Typography sx={{ mb: 4 }}>
+          For concerns or questions:  
+          📩 <strong>softnicsmedia@gmail.com</strong>
+        </Typography>
+      </Box>
 
-      <Typography component="ul" sx={{ pl: 3, mb: 1 }}>
-        <li>Request access to your data</li>
-        <li>Request corrections or updates</li>
-        <li>Request deletion (when allowed legally)</li>
-        <li>Opt out of marketing emails anytime</li>
-      </Typography>
-
-      {/* 9. Updates */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        9. Updates to This Policy
-      </Typography>
-
-      <Typography sx={{ mb: 2 }}>
-        Softnics Media may update this policy occasionally. Changes will be posted
-        with a revised version date.
-      </Typography>
-
-      {/* 10. Contact */}
-      <Typography variant="h6" sx={{ fontWeight: 700, mt: 3 }}>
-        10. Contact Information
-      </Typography>
-
-      <Typography sx={{ mb: 3 }}>
-        For privacy-related concerns, please contact us:  
-        📩 <strong>softnicsmedia@gmail.com</strong>
-      </Typography>
+      {/* BACK TO HOME BUTTON */}
+      <Box sx={{ textAlign: "center", mt: 4 }}>
+        <Button
+          component={Link}
+          to="/"
+          sx={{
+            background: "linear-gradient(90deg,#0046C7,#007BFF)",
+            color: "white",
+            px: 4,
+            py: 1.2,
+            borderRadius: "10px",
+            fontSize: "1rem",
+            fontWeight: 600,
+            "&:hover": {
+              background: "linear-gradient(90deg,#003BB0,#006BE3)",
+            },
+          }}
+        >
+          Back to Home
+        </Button>
+      </Box>
     </Box>
   );
 };

@@ -11,6 +11,7 @@ import WhatsAppButton from "./components/layout/WhatsAppButton";
 
 import HomePage from "./pages/HomePage";
 import ServiceDetailPage from "./pages/ServiceDetailPage";
+import Portfolio from "./components/sections/Portfolio"; // ⭐ NEW IMPORT
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -23,6 +24,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services/:slug" element={<ServiceDetailPage />} />
+
+        {/* ⭐ NEW PORTFOLIO ROUTE */}
+        <Route path="/portfolio" element={<Portfolio />} />
 
         {/* LEGAL PAGES */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

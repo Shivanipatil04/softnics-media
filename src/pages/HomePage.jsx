@@ -1,6 +1,7 @@
-// src/pages/HomePage.jsx
 import React from "react";
 import Box from "@mui/material/Box";
+
+import ScrollReveal from "../components/common/ScrollReveal";
 
 import HeroSlider from "../components/sections/HeroSlider";
 import AboutSection from "../components/sections/AboutSection";
@@ -14,12 +15,30 @@ const HomePage = () => {
   return (
     <Box>
       <HeroSlider />
-      <AboutSection />
-      <ServicesSection />
-      <MissionVisionSection />
-      <ClientsSection />
-      <TeamSection />
-      <ContactSection />
+
+      <ScrollReveal>
+        <AboutSection />
+      </ScrollReveal>
+
+      <ScrollReveal delay={0.1}>
+        <ServicesSection />
+      </ScrollReveal>
+
+      <ScrollReveal delay={0.15}>
+        <MissionVisionSection />
+      </ScrollReveal>
+
+      <ScrollReveal delay={0.15}>
+        <ClientsSection />
+      </ScrollReveal>
+
+      <ScrollReveal delay={0.2}>
+        <TeamSection />
+      </ScrollReveal>
+
+      <ScrollReveal delay={0.2}>
+        <ContactSection />
+      </ScrollReveal>
     </Box>
   );
 };

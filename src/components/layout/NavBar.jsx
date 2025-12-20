@@ -40,7 +40,7 @@ const sections_mobile = [
   { id: "hero", label: "Home" },
   { id: "about", label: "About Us" },
   { id: "services", label: "Services" },
-  { id: "clients", label: "Portfolio" },
+  { id: "portfolio-page", label: "Portfolio" },
   { id: "team", label: "Team" },
   { id: "contact", label: "Contact Us" },
 ];

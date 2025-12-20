@@ -15,7 +15,7 @@ const SocialBar = () => {
         color: "#0046C7",
         py: "10px",
         
-        mb: { xs: "-5px", md: "-40px" },
+        mb: '-60px',
       }}
     >
       <Container
